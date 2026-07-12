@@ -17,5 +17,8 @@
     "react-dom": "latest",
     "three": "^0.184.0",
     "vite": "latest"
+  },
+  "devDependencies": {
+    "terser": "^5.49.0"
   }
 }

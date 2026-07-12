@@ -827,7 +827,7 @@ img {
   display: flex;
   width: max-content;
   animation: projectMarquee 58s linear infinite;
-  will-change: transform;
+  animation-fill-mode: both;
 }
 
 .projectLoopGroup {
@@ -835,25 +835,27 @@ img {
   flex: 0 0 auto;
   gap: 18px;
   padding-right: 18px;
+  flex-shrink: 0;
+  width: max-content;
 }
 
 @keyframes projectMarquee {
-  from {
-    transform: translate3d(0, 0, 0);
+  0% {
+    transform: translateX(0);
   }
 
-  to {
-    transform: translate3d(-50%, 0, 0);
+  100% {
+    transform: translateX(-50%);
   }
 }
 
 @keyframes projectMarqueeReverse {
-  from {
-    transform: translate3d(-50%, 0, 0);
+  0% {
+    transform: translateX(-50%);
   }
 
-  to {
-    transform: translate3d(0, 0, 0);
+  100% {
+    transform: translateX(0);
   }
 }
 
@@ -875,7 +877,8 @@ img {
   transition:
     transform 520ms cubic-bezier(0.16, 1, 0.3, 1),
     filter 520ms cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .projectCard:first-child {
